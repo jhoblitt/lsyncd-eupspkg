@@ -9,6 +9,6 @@ sync {
   rsync = {
     archive = true,
     verbose = true,
-    _extra = {"-P", "-e", "/usr/bin/ssh -i /home/jhoblitt/id_rsa-test -o StrictHostKeyChecking=no -l eupspkg"}
+    _extra = {"-P", "-e", "/usr/bin/ssh -i " .. os.getenv("HOME") .. "/.ssh/id_rsa-eupspkg -o StrictHostKeyChecking=no -l eupspkg"}
     },
 }
